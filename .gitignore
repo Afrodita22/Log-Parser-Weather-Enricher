@@ -1,0 +1,19 @@
+# --- Secrets and Environment ---
+.env
+.env.*
+!.env.example
+
+# --- Python bytecode ---
+__pycache__/
+*.py[cod]
+
+# --- Virtual Environments ---
+venv/
+.venv/
+env/
+
+# --- Logs ---
+logs/
+*.log
+
+

